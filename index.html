@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <img src="images/logo.png" alt="Logo" class="logo">
-        <p class="date-display" id="date-display"></p>
-        <form id="task-form">
-            <input type="text" id="task-input" placeholder="Dodaj nowe zadanie">
-            <input type="submit" value="Dodaj">
-        </form>
-        
-        <ul id="task-list"></ul>
-        <p class="empty-list-message">Brak zadań do wyświetlenia</p>
+  <div class="container">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <p class="date-display" id="date-display"></p>
+
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Dodaj nowe zadanie">
+      <input type="submit" value="Dodaj">
+    </form>
+
+    <div class="filters">
+      <button data-filter="all" class="filter active">Wszystkie</button>
+      <button data-filter="done" class="filter">Wykonane</button>
+      <button data-filter="todo" class="filter">Niewykonane</button>
     </div>
 
-    <script src="script.js"></script>
+    <ul id="task-list"></ul>
+    <p class="empty-list-message">Brak zadań do wyświetlenia</p>
+
+    <div class="json-buttons">
+      <button id="export-btn">Eksportuj JSON</button>
+      <label for="import-file" class="import-label">Importuj JSON</label>
+      <input type="file" id="import-file" accept=".json" style="display: none;">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
